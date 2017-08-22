@@ -1,0 +1,20 @@
+{
+  "name": "jeremy-c/woocommerce-upcoming-product",
+  "type": "wordpress-plugin",
+  "description": "Fork of Sk-Shaikat/woocommerce-upcoming-product",
+  "keywords": ["WooCommerce Upcoming product"],
+  "homepage": "https://github.com/Sk-Shaikat/woocommerce-upcoming-product",
+  "license" : "GPLv2 or later",
+  "authors" : [
+    {
+      "name": "Sk-Shaikat"
+    }
+  ],
+  "require": {
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.5.7"
+    }
+  }
+}
