@@ -590,15 +590,19 @@ class Woocommerce_Upcoming_Product
      * @param bool true
      * @param int $product_id
      *
-     * return bool
+     * @return bool
      */
-    function wup_stop_adding_to_cart( $chack, $product_id  ) {
-        if ( get_post_meta( $product_id, '_upcoming', true ) != 'yes' ) {
-            return true;
-        } else if ( get_post_meta( $product_id, '_upcoming', true ) != 'yes' && WC_Admin_Settings::get_option( 'wup_button_hide', 'no' ) == 'no' ) {
-            return false;
-        }
-    }
+	function wup_stop_adding_to_cart( $check, $product_id  ) {
+		$add_to_cart = true;
+
+		if ( get_post_meta( $product_id, '_upcoming', true ) != 'yes' ) {
+			$add_to_cart = true;
+		} else if ( get_post_meta( $product_id, '_upcoming', true ) != 'yes' && WC_Admin_Settings::get_option( 'wup_button_hide', 'no' ) == 'no' ) {
+			$add_to_cart = false;
+		}
+
+		return $add_to_cart;
+	}
 
     /**
      * Add text to upcoming product title
